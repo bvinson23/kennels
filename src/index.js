@@ -1,9 +1,12 @@
+//imports from the react node_module
 import React from 'react';
 import ReactDOM from 'react-dom';
+//import from the Kennel.js
 import { Kennel } from "./components/Kennel";
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
+//this statement renders things to the DOM at the #root
 ReactDOM.render(
   <React.StrictMode>
     <Kennel />
