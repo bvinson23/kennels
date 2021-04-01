@@ -1,3 +1,4 @@
+//the useState import is a function that is called a hook. It is used to store data about the component.
 import React, { useState } from "react"
 
 export const PropsAndState = ({ yourName }) => {
