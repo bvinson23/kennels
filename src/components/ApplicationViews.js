@@ -1,7 +1,7 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import { Home } from "./Home";
-import { AnimalList } from "./animal/AnimalCard";
+import { AnimalList } from "./animal/AnimalList";
 import { Location } from "./location/Location";
 import { Customer } from "./customer/Customer";
 import { Employee } from "./employee/Employee"
