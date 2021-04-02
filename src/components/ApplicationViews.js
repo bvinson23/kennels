@@ -1,20 +1,21 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import { Home } from "./Home";
-import { AnimalList } from "./animal/AnimalList"
-import { AnimalProvider } from "./animal/AnimalProvider"
+import { AnimalCard } from "./animal/AnimalCard"
 
 export const ApplicationViews = () => {
     return (
         <>
             {/*Render the location list when http://localhost:3000/ */}
+            {/*You must use exact or it will display anything that 
+                                                starts with that path*/}
             <Route exact path="/">
                 <Home />
             </Route>
 
             {/* Render the animal list when http://localhost:3000/animals */}
             <Route path="/animals">
-                <AnimalList />
+                <AnimalCard />
             </Route>
         </>
     )
