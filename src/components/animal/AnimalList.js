@@ -10,7 +10,7 @@ export const AnimalList = () => {
     const getAnimals = () => {
         // After the data comes back from the API, we
         // use the setAnimals function to update state
-        return getAllAnimals.then(animalsFromAPI => {
+        return getAllAnimals().then(animalsFromAPI => {
             setAnimals(animalsFromAPI)
         });
     };
@@ -23,7 +23,7 @@ export const AnimalList = () => {
     // Finally we use map() to "loop over" the animals array to show a list of animal cards
     return (
         <div className="container-cards">
-            {animals.map(animal => <AnimalCard />)}
+            {animals.map(animal => <AnimalCard key={animal.id} animal={animal}/>)}
         </div>
     )
 }
