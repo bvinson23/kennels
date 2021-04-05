@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 //import the components we will need
 import { Employee } from "./Employee";
-import { getAllEmployees, getEmployeeById } from "../../modules/EmployeeManager";
+import { deleteEmployee, getAllEmployees, getEmployeeById } from "../../modules/EmployeeManager";
 
 export const EmployeeList = () => {
     // The initial state is an empty array
@@ -13,6 +13,11 @@ export const EmployeeList = () => {
         return getAllEmployees().then(employeesFromAPI => {
             setEmployees(employeesFromAPI)
         });
+    };
+
+    const handleDeleteEmployee = id => {
+        deleteEmployee(id)
+        .then(() => getAllEmployees().then(setEmployees));
     };
 
     // got the animals from the API on the component's first render
