@@ -41,7 +41,13 @@
       "address": "462 Chinook Dr"
     }
   ],
-  "employees": [],
+  "employees": [
+    {
+      "id": 1,
+      "name": "Melinda Catperson",
+      "locationId": 2
+    }
+  ],
   "locations": [
     {
       "id": 1,
