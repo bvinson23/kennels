@@ -17,7 +17,6 @@ export const AnimalCard = ({animal, handleDeleteAnimal}) => {
                     <Link to={`/animals/${animal.id}`}>
                         <button>Details</button>
                     </Link>
-                    <button type="button" onClick={() => handleDeleteAnimal(animal.id)}>Discharge</button>
             </div>
         </div>
     );

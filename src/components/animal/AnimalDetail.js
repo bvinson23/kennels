@@ -5,6 +5,7 @@ import { useParams, useHistory } from "react-router-dom"
 
 export const AnimalDetail = () => {
     const [animal, setAnimal] = useState({ name: "", breed: ""});
+    const [isLoading, setIsLoading] = useState(true);
 
     const {animalId} = useParams();
     const history = useHistory();
@@ -18,6 +19,7 @@ export const AnimalDetail = () => {
                 name: animal.name,
                 breed: animal.breed
             });
+            setIsLoading(false);
         });
     }, [animalId]);
     
@@ -28,6 +30,9 @@ export const AnimalDetail = () => {
             {/* What's up with the question mark???? See below.*/}
             <div className="animal__location">Location: {animal.location?.name}</div>
             <div className="animal__owner">Customer: {animal.customer?.name}</div>
+            <button type="button" disabled={isLoading} onClick={handleDelete}>
+                Discharge
+            </button>
         </section>
     );
 }
