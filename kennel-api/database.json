@@ -1,13 +1,6 @@
 {
   "animals": [
     {
-      "id": 1,
-      "name": "Doodles",
-      "breed": "Poodle",
-      "customerId": 1,
-      "locationId": 2
-    },
-    {
       "id": 2,
       "name": "Maggie",
       "breed": "Calico",
@@ -30,11 +23,6 @@
     }
   ],
   "customers": [
-    {
-      "id": 1,
-      "name": "Hannah Hall",
-      "address": "7002 Chestnut Ct"
-    },
     {
       "id": 2,
       "name": "Taylor Slay",

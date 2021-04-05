@@ -2,7 +2,7 @@ import React from "react"
 import "./Customer.css"
 
 //function to make a customer card
-export const Customer = ({ customer }) => {
+export const Customer = ({ customer, handleDeleteCustomer }) => {
     return (
         <div className="card">
             <div className="card-content">
@@ -10,6 +10,7 @@ export const Customer = ({ customer }) => {
                     {customer.name}
                     </span></h3>
                     <p>Breed: {customer.address}</p>
+                    <button type="button" onClick={() => handleDeleteCustomer(customer.id)}>Delete</button>
             </div>
         </div>
     );
