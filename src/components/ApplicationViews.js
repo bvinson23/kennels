@@ -20,15 +20,18 @@ export const ApplicationViews = () => {
             <Route path="/animals">
                 <AnimalList />
             </Route>
-
+            
+            {/* Render the location list when http://localhost:3000/locations */}
             <Route path="/locations">
                 <Location />
             </Route>
-
+            
+            {/* Render the customer list when http://localhost:3000/customers */}
             <Route path="/customers">
                 <Customer />
             </Route>
 
+            {/* Render the employee list when http://localhost:3000/employees */}
             <Route path="/employees">
                 <Employee />
             </Route>

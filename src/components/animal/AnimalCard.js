@@ -1,5 +1,4 @@
 import React from "react";
-import { getAnimalById } from "../../modules/AnimalManager"
 import "./Animal.css"
 
 //function to make an animal card
