@@ -20,10 +20,10 @@ export const CustomerList = () => {
         getCustomers();
     }, []);
 
-    // Finally we use map() to "loop over" the animals array to show a list of animal cards
+    // Finally we use map() to "loop over" the customers array to show a list of animal cards
     return (
         <div className="container-cards">
-            {customers.map(customer => <Customer key={customer.id} customer={customer}/>)}
+            {customers.map(customer => <Customer key={customer.id} customer={customer} />)}
         </div>
     )
 }
