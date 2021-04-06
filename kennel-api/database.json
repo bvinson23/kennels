@@ -42,6 +42,16 @@
       "id": 2,
       "name": "Jeremiah Dogperson",
       "locationId": 1
+    },
+    {
+      "id": 3,
+      "name": "Moira Rose",
+      "locationId": 1
+    },
+    {
+      "id": 4,
+      "name": "David Rose",
+      "locationId": 2
     }
   ],
   "locations": [
