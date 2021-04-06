@@ -9,7 +9,7 @@ export const Employee = ({employee, handleDeleteEmployee}) => {
                 <h3>Name: <span className="card-employeename">
                     {employee.name}
                     </span></h3>
-                    <p>Location: {employee.location}</p>
+                    <p>Location: {employee.location.name}</p>
                     <button type="button" onClick={() => handleDeleteEmployee(employee.id)}>Terminate</button>
             </div>
         </div>

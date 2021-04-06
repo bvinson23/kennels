@@ -6,7 +6,7 @@ export const getEmployeeById = (id) => {
 }
 
 export const getAllEmployees = () => {
-    return fetch(`${remoteURL}/employees`)
+    return fetch(`${remoteURL}/employees?_expand=location`)
     .then(result => result.json())
 }
 

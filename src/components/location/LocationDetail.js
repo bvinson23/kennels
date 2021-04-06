@@ -4,7 +4,7 @@ import "./LocationDetail.css";
 import { useParams, useHistory } from "react-router-dom"
 
 export const LocationDetail = () => {
-    const [location, setLocation] = useState({ name: "", address: ""});
+    const [location, setLocation] = useState({});
 
     const {locationId} = useParams();
     const history = useHistory();
