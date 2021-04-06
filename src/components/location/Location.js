@@ -14,7 +14,6 @@ export const Location = ({location, handleDeleteLocation}) => {
                     <Link to={`/locations/${location.id}`}>
                         <button>Details</button>
                     </Link>
-                    <button type="button" onClick={() => handleDeleteLocation(location.id)}>Close Location</button>
             </div>
         </div>
     );
