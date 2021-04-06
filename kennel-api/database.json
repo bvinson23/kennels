@@ -5,21 +5,24 @@
       "name": "Maggie",
       "breed": "Calico",
       "customerId": 2,
-      "locationId": 2
+      "locationId": 2,
+      "employeeId": 1
     },
     {
       "id": 3,
       "name": "Olive",
       "breed": "Maine Coon mix",
       "customerId": 2,
-      "locationId": 2
+      "locationId": 2,
+      "employeeId": 1
     },
     {
       "id": 4,
       "name": "Luna",
       "breed": "Russian Blue mix",
       "customerId": 2,
-      "locationId": 2
+      "locationId": 2,
+      "employeeId": 1
     }
   ],
   "customers": [
@@ -33,6 +36,21 @@
     {
       "id": 1,
       "name": "Melinda Catperson",
+      "locationId": 2
+    },
+    {
+      "id": 2,
+      "name": "Jeremiah Dogperson",
+      "locationId": 1
+    },
+    {
+      "id": 3,
+      "name": "Moira Rose",
+      "locationId": 1
+    },
+    {
+      "id": 4,
+      "name": "David Rose",
       "locationId": 2
     }
   ],
