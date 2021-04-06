@@ -17,7 +17,7 @@ export const AnimalList = () => {
 
     const handleDeleteAnimal = id => {
         deleteAnimal(id)
-        .then(() => getAllAnimals().then(setAnimals));
+        .then(() => getAnimals());
     };
 
     // got the animals from the API on the component's first render
