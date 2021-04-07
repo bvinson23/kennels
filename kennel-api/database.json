@@ -23,6 +23,14 @@
       "customerId": 2,
       "locationId": 2,
       "employeeId": 1
+    },
+    {
+      "name": "Harper",
+      "breed": "Pit Bull",
+      "locationId": 1,
+      "customerId": 2,
+      "employeeId": 2,
+      "id": 5
     }
   ],
   "customers": [

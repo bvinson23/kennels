@@ -33,7 +33,7 @@ export const AnimalList = () => {
             <section className="section-content">
                 <button type="button"
                     className="btn"
-                    onClick={() => {history.push("/animals//create")}}>
+                    onClick={() => {history.push("/animals/create")}}>
                         Admit Animal
                 </button>
             </section>
