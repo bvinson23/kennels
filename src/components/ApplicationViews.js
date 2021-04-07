@@ -5,10 +5,11 @@ import { AnimalList } from "./animal/AnimalList";
 import { AnimalDetail } from "./animal/AnimalDetail";
 import { AnimalForm } from "./animal/AnimalForm";
 import { CustomerList } from "./customer/CustomerList";
+import { CustomerForm } from "./customer/CustomerForm";
 import { LocationList } from "./location/LocationList";
 import { LocationDetail } from "./location/LocationDetail";
 import { EmployeeList } from "./employee/EmployeeList";
-import { EmployeeForm } from "./employee/EmployeeForm"
+import { EmployeeForm } from "./employee/EmployeeForm";
 
 export const ApplicationViews = () => {
     return (
@@ -52,8 +53,12 @@ export const ApplicationViews = () => {
             </Route>
             
             {/* Render the customer list when http://localhost:3000/customers */}
-            <Route path="/customers">
+            <Route exact path="/customers">
                 <CustomerList />
+            </Route>
+
+            <Route path="/customers/create">
+                <CustomerForm />
             </Route>
 
             {/* Render the employee list when http://localhost:3000/employees */}
