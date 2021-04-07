@@ -8,6 +8,7 @@ import { CustomerList } from "./customer/CustomerList";
 import { LocationList } from "./location/LocationList";
 import { LocationDetail } from "./location/LocationDetail";
 import { EmployeeList } from "./employee/EmployeeList";
+import { EmployeeForm } from "./employee/EmployeeForm"
 
 export const ApplicationViews = () => {
     return (
@@ -58,6 +59,10 @@ export const ApplicationViews = () => {
             {/* Render the employee list when http://localhost:3000/employees */}
             <Route path="/employees">
                 <EmployeeList />
+            </Route>
+
+            <Route path="/employees/create">
+                <EmployeeForm />
             </Route>
         </>
     )
