@@ -38,6 +38,11 @@
       "id": 2,
       "name": "Taylor Slay",
       "address": "462 Chinook Dr"
+    },
+    {
+      "name": "Stevie Budd",
+      "address": "Rosebud Motel",
+      "id": 3
     }
   ],
   "employees": [
