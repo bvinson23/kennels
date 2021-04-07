@@ -8,6 +8,7 @@ import { CustomerList } from "./customer/CustomerList";
 import { CustomerForm } from "./customer/CustomerForm";
 import { LocationList } from "./location/LocationList";
 import { LocationDetail } from "./location/LocationDetail";
+import { LocationForm } from "./location/LocationForm";
 import { EmployeeList } from "./employee/EmployeeList";
 import { EmployeeForm } from "./employee/EmployeeForm";
 
@@ -50,6 +51,10 @@ export const ApplicationViews = () => {
 
             <Route path="/locations/:locationId(\d+)">
                 <LocationDetail />
+            </Route>
+
+            <Route path="/locations/create">
+                <LocationForm />
             </Route>
             
             {/* Render the customer list when http://localhost:3000/customers */}
