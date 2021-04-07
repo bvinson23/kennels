@@ -23,6 +23,14 @@
       "customerId": 2,
       "locationId": 2,
       "employeeId": 1
+    },
+    {
+      "name": "Harper",
+      "breed": "Pit Bull",
+      "locationId": 1,
+      "customerId": 2,
+      "employeeId": 2,
+      "id": 5
     }
   ],
   "customers": [
@@ -30,6 +38,11 @@
       "id": 2,
       "name": "Taylor Slay",
       "address": "462 Chinook Dr"
+    },
+    {
+      "name": "Stevie Budd",
+      "address": "Rosebud Motel",
+      "id": 3
     }
   ],
   "employees": [
@@ -52,6 +65,11 @@
       "id": 4,
       "name": "David Rose",
       "locationId": 2
+    },
+    {
+      "name": "Johnny Rose",
+      "locationId": 1,
+      "id": 5
     }
   ],
   "locations": [
@@ -64,6 +82,11 @@
       "id": 2,
       "name": "Nashville South",
       "address": "209 Emory Drive"
+    },
+    {
+      "name": "Nashville East",
+      "address": "908 Gallatin Ave",
+      "id": 3
     }
   ]
 }
