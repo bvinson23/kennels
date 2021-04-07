@@ -57,7 +57,7 @@ export const ApplicationViews = () => {
             </Route>
 
             {/* Render the employee list when http://localhost:3000/employees */}
-            <Route path="/employees">
+            <Route exact path="/employees">
                 <EmployeeList />
             </Route>
 
