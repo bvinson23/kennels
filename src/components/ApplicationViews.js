@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Route, Redirect } from "react-router-dom";
 import { Home } from "./Home";
 import { AnimalList } from "./animal/AnimalList";
 import { AnimalDetail } from "./animal/AnimalDetail";
 import { AnimalForm } from "./animal/AnimalForm";
+import { AnimalEditForm } from "./animal/AnimalEditForm";
 import { CustomerList } from "./customer/CustomerList";
 import { CustomerForm } from "./customer/CustomerForm";
 import { LocationList } from "./location/LocationList";
@@ -15,7 +16,7 @@ import { Login } from "../components/auth/Login"
 import { Register } from "../components/auth/Register"
 
 export const ApplicationViews = () => {
-    const isAuthenticated = () => sessionStorage.getItem("kennel_customer") !== null;
+    const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem("kennel_customer") !== null)
 
     return (
         <>
@@ -28,15 +29,15 @@ export const ApplicationViews = () => {
 
             {/* Render the animal list when http://localhost:3000/animals */}
             <Route exact path="/animals">
-                if(isAuthenticated()) {
-                    <AnimalList />
-                } else {
-                    <Redirect to="/Login" />
-                }
+                <AnimalList />
             </Route>
 
-            <Route path="/animals/:animalId(\d+)">
+            <Route exact path="/animals/:animalId(\d+)">
                 <AnimalDetail />
+            </Route>
+
+            <Route path="/animals/:animalId(\d+)/edit">
+                <AnimalEditForm />
             </Route>
 
             {/*
