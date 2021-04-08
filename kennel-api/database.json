@@ -31,6 +31,14 @@
       "customerId": 2,
       "employeeId": 2,
       "id": 5
+    },
+    {
+      "name": "Hattie",
+      "breed": "Pit Bull Mix",
+      "locationId": 4,
+      "customerId": 3,
+      "employeeId": 4,
+      "id": 6
     }
   ],
   "customers": [
@@ -87,6 +95,11 @@
       "name": "Nashville East",
       "address": "908 Gallatin Ave",
       "id": 3
+    },
+    {
+      "name": "Germantown",
+      "address": "100 Monroe St",
+      "id": 4
     }
   ]
 }
