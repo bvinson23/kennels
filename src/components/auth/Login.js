@@ -1,50 +1,64 @@
-import React, { useState } from "react";
+import React, { useRef } from "react"
+import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom"
+import "./Login.css"
 
-const Login = props => {
-    const [credentials, setCredentials] = useState({email: "", password: ""});
 
-    //Update state whenever an input field is edited
-    const handleFieldChange = (evt) => {
-        const stateToChange = { ...credentials };
-        stateToChange[evt.target.id] = evt.target.value;
-        setCredentials(stateToChange);
-    };
+export const Login = props => {
+    const email = useRef()
+    const existDialog = useRef()
+    const history = useHistory()
+
+    const existingUserCheck = () => {
+        return fetch(`http://localhost:5002/customers?email=${email.current.value}`)
+            .then(res => res.json())
+            .then(user => user.length ? user[0] : false)
+    }
 
     const handleLogin = (e) => {
-        e.preventDefault();
-        /*
-            For now, just store the email and password that
-            the customer enters into session storage.
-            ...Let's just trust the user... That's a good idea, right????
-        */
-       sessionStorage.setItem(
-           "credentials",
-           JSON.stringify(credentials)
-       );
-       props.history.push("/animals");
+        e.preventDefault()
+
+        existingUserCheck()
+            .then(exists => {
+                if (exists) {
+                    sessionStorage.setItem("kennel_customer", exists.id)
+                    history.push("/")
+                } else {
+                    existDialog.current.showModal()
+                }
+            })
     }
 
     return (
-        <form onSubmit={handleLogin}>
-      <fieldset>
-        <h3>Please sign in</h3>
-        <div className="formgrid">
-          <input onChange={handleFieldChange} type="email"
-            id="email"
-            placeholder="Email address"
-            required="" autoFocus="" />
-          <label htmlFor="inputEmail">Email address</label>
+        <main className="container--login">
+            <dialog className="dialog dialog--auth" ref={existDialog}>
+                <div>User does not exist</div>
+                <button className="button--close" onClick={e => existDialog.current.close()}>Close</button>
+            </dialog>
 
-          <input onChange={handleFieldChange} type="password"
-            id="password"
-            placeholder="Password"
-            required="" />
-          <label htmlFor="inputPassword">Password</label>
-        </div>
-        <button type="submit">Sign in</button>
-      </fieldset>
-    </form>
-    );
-};
+            <section>
+                <form className="form--login" onSubmit={handleLogin}>
+                    <h1>Nashville Kennels</h1>
+                    <h2>Please sign in</h2>
+                    <fieldset>
+                        <label htmlFor="inputEmail"> Email address </label>
+                        <input ref={email} type="email"
+                            id="email"
+                            className="form-control"
+                            placeholder="Email address"
+                            required autoFocus />
+                    </fieldset>
+                    <fieldset>
+                        <button type="submit">
+                            Sign in
+                        </button>
+                    </fieldset>
+                </form>
+            </section>
+            <section className="link--register">
+                <Link to="/register">Not a member yet?</Link>
+            </section>
+        </main>
+    )
+}
 
-export default Login;

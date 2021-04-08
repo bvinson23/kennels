@@ -1,5 +1,5 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import { Home } from "./Home";
 import { AnimalList } from "./animal/AnimalList";
 import { AnimalDetail } from "./animal/AnimalDetail";
@@ -11,8 +11,12 @@ import { LocationDetail } from "./location/LocationDetail";
 import { LocationForm } from "./location/LocationForm";
 import { EmployeeList } from "./employee/EmployeeList";
 import { EmployeeForm } from "./employee/EmployeeForm";
+import { Login } from "../components/auth/Login"
+import { Register } from "../components/auth/Register"
 
 export const ApplicationViews = () => {
+    const isAuthenticated = () => sessionStorage.getItem("kennel_customer") !== null;
+
     return (
         <>
             {/*Render the location list when http://localhost:3000/ */}
@@ -24,7 +28,11 @@ export const ApplicationViews = () => {
 
             {/* Render the animal list when http://localhost:3000/animals */}
             <Route exact path="/animals">
-                <AnimalList />
+                if(isAuthenticated()) {
+                    <AnimalList />
+                } else {
+                    <Redirect to="/Login" />
+                }
             </Route>
 
             <Route path="/animals/:animalId(\d+)">
@@ -73,6 +81,14 @@ export const ApplicationViews = () => {
 
             <Route path="/employees/create">
                 <EmployeeForm />
+            </Route>
+
+            <Route path="/login">
+                <Login />
+            </Route>
+
+            <Route path="/register">
+                <Register />
             </Route>
         </>
     )
