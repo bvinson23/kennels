@@ -20,6 +20,22 @@ export const CustomerEditForm = () => {
         setCustomer(stateToChange);
     };
 
+    const updateExistingCustomer = evt => {
+        evt.preventDefault()
+        setIsLoading(true);
+        
+        const editedCustomer = {
+            id: customerId,
+            name: customer.name,
+            address: customer.address,
+            email: customer.email
+        };
+        
+        updateCustomer(editedCustomer)
+        .then(() => history.push("/customers")
+        )
+    }
+    
     useEffect(() => {
         getCustomerById(customerId)
             .then(customer => {
@@ -28,53 +44,38 @@ export const CustomerEditForm = () => {
             });
     }, [customerId]);
 
-    const updateExistingCustomer = evt => {
-        evt.preventDefault()
-        setIsLoading(true);
-
-        const editedCustomer = {
-            id: customerId,
-            name: customer.name,
-            address: customer.address,
-            email: customer.email
-        };
-
-        updateCustomer(editedCustomer)
-            .then(() => history.push("/customers")
-            )
-    }
-
     return (
         <>
             <form>
                 <fieldset>
                     <div className="formgrid">
-                    <input
-                        type="text"
-                        required
-                        className="form-control"
-                        onChange={handleFieldChange}
-                        id="name"
-                        value={customer.name}
-                    />
-                    <label htmlFor="name">Customer name</label>
+                        <input
+                            type="text"
+                            required
+                            className="form-control"
+                            onChange={handleFieldChange}
+                            id="name"
+                            value={customer.name}
+                        />
+                        <label htmlFor="name">Customer name</label>
 
-                    <input
-                        type="text"
-                        required
-                        className="form-control"
-                        onChange={handleFieldChange}
-                        id="address"
-                        value={customer.address}
-                    />
-                    <label htmlFor="address">address</label>
+                        <input
+                            type="text"
+                            required
+                            className="form-control"
+                            onChange={handleFieldChange}
+                            id="address"
+                            value={customer.address}
+                        />
+                        <label htmlFor="address">address</label>
                     </div>
                     <div className="alignRight">
                         <button
                             type="button" disabled={isLoading}
                             onClick={updateExistingCustomer}
                             className="btn btn-primary">
-                            Submit</button>
+                            Submit
+                        </button>
                     </div>
                 </fieldset>
             </form>

@@ -1,11 +1,9 @@
 import React from "react"
-import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Customer.css"
 
 //function to make a customer card
 export const Customer = ({ customer, handleDeleteCustomer }) => {
-    const history = useHistory();
-
     return (
         <div className="card">
             <div className="card-content">
@@ -14,9 +12,11 @@ export const Customer = ({ customer, handleDeleteCustomer }) => {
                     </span></h3>
                     <p>Address: {customer.address}</p>
                     <button type="button" onClick={() => handleDeleteCustomer(customer.id)}>Delete</button>
-                    <button type="button" onClick={() => history.push(`/customers/${customer.id}/edit`)}>
-                        Edit
-                    </button>
+                    <Link to={`/customers/${customer.id}/edit`}>
+                        <button type="button">
+                            Edit
+                        </button>
+                    </Link>
             </div>
         </div>
     );
