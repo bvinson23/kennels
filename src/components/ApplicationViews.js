@@ -7,6 +7,7 @@ import { AnimalForm } from "./animal/AnimalForm";
 import { AnimalEditForm } from "./animal/AnimalEditForm";
 import { CustomerList } from "./customer/CustomerList";
 import { CustomerForm } from "./customer/CustomerForm";
+import { CustomerEditForm } from "./customer/CustomerEditForm";
 import { LocationList } from "./location/LocationList";
 import { LocationDetail } from "./location/LocationDetail";
 import { LocationForm } from "./location/LocationForm";
@@ -73,6 +74,10 @@ export const ApplicationViews = () => {
 
             <Route path="/customers/create">
                 <CustomerForm />
+            </Route>
+
+            <Route path="customers/:customerId(\d+)/edit">
+                <CustomerEditForm />
             </Route>
 
             {/* Render the employee list when http://localhost:3000/employees */}
