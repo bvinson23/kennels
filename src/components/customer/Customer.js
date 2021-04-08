@@ -11,6 +11,9 @@ export const Customer = ({ customer, handleDeleteCustomer }) => {
                     </span></h3>
                     <p>Address: {customer.address}</p>
                     <button type="button" onClick={() => handleDeleteCustomer(customer.id)}>Delete</button>
+                    <button type="button" onClick={() => history.pushState(`/customers/${customer.id}/edit`)}>
+                        Edit
+                    </button>
             </div>
         </div>
     );
