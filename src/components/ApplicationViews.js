@@ -8,15 +8,16 @@ import { AnimalEditForm } from "./animal/AnimalEditForm";
 import { CustomerList } from "./customer/CustomerList";
 import { CustomerForm } from "./customer/CustomerForm";
 import { CustomerEditForm } from "./customer/CustomerEditForm";
+import { CustomerDetail } from "./customer/CustomerDetail";
 import { LocationList } from "./location/LocationList";
 import { LocationDetail } from "./location/LocationDetail";
 import { LocationForm } from "./location/LocationForm";
 import { LocationEditForm } from "./location/LocationEditForm";
 import { EmployeeList } from "./employee/EmployeeList";
 import { EmployeeForm } from "./employee/EmployeeForm";
+import { EmployeeEditForm } from "./employee/EmployeeEditForm";
 import { Login } from "../components/auth/Login";
 import { Register } from "../components/auth/Register";
-import { CustomerDetail } from "./customer/CustomerDetail";
 
 export const ApplicationViews = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem("kennel_customer") !== null)
@@ -101,6 +102,10 @@ export const ApplicationViews = () => {
 
             <Route path="/employees/create">
                 <EmployeeForm />
+            </Route>
+
+            <Route path="/employees/:employeeId(\d+)/edit">
+                <EmployeeEditForm />
             </Route>
 
             <Route path="/login">
