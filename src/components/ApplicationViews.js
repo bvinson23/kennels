@@ -11,10 +11,11 @@ import { CustomerEditForm } from "./customer/CustomerEditForm";
 import { LocationList } from "./location/LocationList";
 import { LocationDetail } from "./location/LocationDetail";
 import { LocationForm } from "./location/LocationForm";
+import { LocationEditForm } from "./location/LocationEditForm";
 import { EmployeeList } from "./employee/EmployeeList";
 import { EmployeeForm } from "./employee/EmployeeForm";
-import { Login } from "../components/auth/Login"
-import { Register } from "../components/auth/Register"
+import { Login } from "../components/auth/Login";
+import { Register } from "../components/auth/Register";
 
 export const ApplicationViews = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem("kennel_customer") !== null)
@@ -59,8 +60,12 @@ export const ApplicationViews = () => {
                 <LocationList />
             </Route>
 
-            <Route path="/locations/:locationId(\d+)">
+            <Route exact path="/locations/:locationId(\d+)">
                 <LocationDetail />
+            </Route>
+
+            <Route path="/locations/:locationId(\d+)/edit">
+                <LocationEditForm />
             </Route>
 
             <Route path="/locations/create">
