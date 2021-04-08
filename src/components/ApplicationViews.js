@@ -21,6 +21,10 @@ import { CustomerDetail } from "./customer/CustomerDetail";
 export const ApplicationViews = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem("kennel_customer") !== null)
 
+    const setAuthUser = (user) => {
+	sessionStorage.setItem("kennel_customer", JSON.stringify(user))
+	setIsAuthenticated(sessionStorage.getItem("kennel_customer") !== null)
+}
     return (
         <>
             {/*Render the location list when http://localhost:3000/ */}
@@ -32,7 +36,7 @@ export const ApplicationViews = () => {
 
             {/* Render the animal list when http://localhost:3000/animals */}
             <Route exact path="/animals">
-                <AnimalList />
+                {isAuthenticated ? <AnimalList /> : <Redirect to="/login" />}
             </Route>
 
             <Route exact path="/animals/:animalId(\d+)">
@@ -100,11 +104,11 @@ export const ApplicationViews = () => {
             </Route>
 
             <Route path="/login">
-                <Login />
+                <Login setAuthUser={setAuthUser} />
             </Route>
 
             <Route path="/register">
-                <Register />
+                <Register setAuthUser={setAuthUser} />
             </Route>
         </>
     )
