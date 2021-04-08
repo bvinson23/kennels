@@ -45,12 +45,14 @@
     {
       "id": 2,
       "name": "Taylor Slay",
-      "address": "462 Chinook Dr"
+      "address": "462 Chinook Dr",
+      "email": "taylor@taylor.com"
     },
     {
       "name": "Stevie Budd",
       "address": "Rosebud Motel",
-      "id": 3
+      "id": 3,
+      "email": "stevie@rosebudmotel.com"
     }
   ],
   "employees": [
