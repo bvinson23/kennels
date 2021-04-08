@@ -81,10 +81,7 @@ export const AnimalEditForm = () => {
                 .then(() => history.push("/animals")
                 )
         }
-
     }
-
-
 
     return (
         <>
