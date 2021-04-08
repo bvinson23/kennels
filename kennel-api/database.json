@@ -4,7 +4,7 @@
       "id": 2,
       "name": "Maggie",
       "breed": "Domestic Short Hair",
-      "locationId": 2,
+      "locationId": 4,
       "customerId": 2,
       "employeeId": 3
     },
@@ -20,8 +20,8 @@
       "id": 4,
       "name": "Luna",
       "breed": "Russian Blue mix",
-      "customerId": 2,
       "locationId": 2,
+      "customerId": 4,
       "employeeId": 1
     },
     {
