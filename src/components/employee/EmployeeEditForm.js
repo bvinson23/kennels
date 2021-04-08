@@ -7,6 +7,7 @@ import { getAllLocations } from "../../modules/LocationManager";
 export const EmployeeEditForm = () => {
     const [employee, setEmployee] = useState({name: "", location: ""});
     const [isLoading, setIsLoading] = useState(false);
+    const [locations, setLocations] = useState([]);
 
     const { employeeId } = useParams();
     const history = useHistory();
@@ -25,16 +26,29 @@ export const EmployeeEditForm = () => {
         evt.preventDefault()
         setIsLoading(true);
 
+        const locationId = employee.locationId
+
+        if (locationId === 0) {
+            window.alert("Please select a location")
+        }
+
         const editedEmployee = {
             id: employeeId,
             name: employee.name,
-            location: employee.location
+            locationId: employee.locationId
         };
 
         updateEmployee(editedEmployee)
             .then(() => history.push("/employees")
             )
     }
+
+    useEffect(() => {
+        getAllLocations()
+            .then(locationsFromAPI => {
+                setLocations(locationsFromAPI)
+            });
+    }, []);
 
     useEffect(() => {
         getEmployeeById(employeeId)
@@ -58,17 +72,20 @@ export const EmployeeEditForm = () => {
                             value={employee.name}
                         />
                         <label htmlFor="name">Employee name</label>
-
-                        <input
-                            type="text"
-                            required
-                            className="form-control"
-                            onChange={handleFieldChange}
-                            id="location"
-                            value={employee.location}
-                        />
-                        <label htmlFor="location">location</label>
                     </div>
+                </fieldset>
+                <fieldset>
+                        <div className="form-group">
+                            <label htmlFor="location">Assign to location: </label>
+                            <select value={employee.locationId} name="locationId" id="locationId" onChange={handleFieldChange} className="form-control" >
+                                <option value="0">Select a location</option>
+                                {locations.map(l => (
+                                    <option key={l.id} value={l.id}>
+                                        {l.name}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>    
                     <div className="alignRight">
                         <button
                             type="button" disabled={isLoading}
