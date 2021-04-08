@@ -4,7 +4,7 @@ import { getCustomerById, updateCustomer } from "../../modules/CustomerManager";
 import "./CustomerForm.css"
 
 export const CustomerEditForm = () => {
-    const [customer, setCustomer] = useState({});
+    const [customer, setCustomer] = useState({name: "", address: "", email: ""});
     const [isLoading, setIsLoading] = useState(false);
 
     const { customerId } = useParams();
@@ -23,19 +23,19 @@ export const CustomerEditForm = () => {
     const updateExistingCustomer = evt => {
         evt.preventDefault()
         setIsLoading(true);
-        
+
         const editedCustomer = {
             id: customerId,
             name: customer.name,
-            address: customer.address,
-            email: customer.email
+            email: customer.email,
+            address: customer.address
         };
-        
+
         updateCustomer(editedCustomer)
-        .then(() => history.push("/customers")
-        )
+            .then(() => history.push("/customers")
+            )
     }
-    
+
     useEffect(() => {
         getCustomerById(customerId)
             .then(customer => {
@@ -68,6 +68,16 @@ export const CustomerEditForm = () => {
                             value={customer.address}
                         />
                         <label htmlFor="address">address</label>
+                        
+                        <input
+                            type="text"
+                            required
+                            className="form-control"
+                            onChange={handleFieldChange}
+                            id="email"
+                            value={customer.email}
+                        />
+                        <label htmlFor="email">email</label>
                     </div>
                     <div className="alignRight">
                         <button

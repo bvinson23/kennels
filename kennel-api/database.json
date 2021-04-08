@@ -4,9 +4,9 @@
       "id": 2,
       "name": "Maggie",
       "breed": "Domestic Short Hair",
-      "locationId": 3,
+      "locationId": 1,
       "customerId": 2,
-      "employeeId": 5
+      "employeeId": 1
     },
     {
       "id": 3,
@@ -49,16 +49,16 @@
       "email": "taylor@taylor.com"
     },
     {
-      "name": "Stevie Budd",
-      "address": "Rosebud Motel",
       "id": 3,
-      "email": "stevie@rosebudmotel.com"
+      "name": "Stevie Budd",
+      "email": "sbudd@rosebudmotel.com",
+      "address": "Rosebud Motel"
     },
     {
-      "email": "brandon@brandon.com",
-      "address": "462 Chinook Dr",
+      "id": 4,
       "name": "Brandon Vinson",
-      "id": 4
+      "email": "brandon@brandon.com",
+      "address": "462 Chinook Dr"
     }
   ],
   "employees": [

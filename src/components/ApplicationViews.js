@@ -90,7 +90,7 @@ export const ApplicationViews = () => {
                 <CustomerDetail />
             </Route>
 
-            <Route path="customers/:customerId(\d+)/edit">
+            <Route path="/customers/:customerId(\d+)/edit">
                 <CustomerEditForm />
             </Route>
 
