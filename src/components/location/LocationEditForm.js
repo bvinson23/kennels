@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getLocationById } from "../../modules/LocationManager";
+import { getLocationById, updateLocation } from "../../modules/LocationManager";
 import "./LocationForm.css";
 import { useParams, useHistory } from "react-router-dom";
 

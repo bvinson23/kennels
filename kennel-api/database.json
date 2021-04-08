@@ -100,9 +100,9 @@
       "address": "209 Emory Drive"
     },
     {
+      "id": 3,
       "name": "Nashville East",
-      "address": "908 Gallatin Ave",
-      "id": 3
+      "address": "908 Gallatin Ave"
     },
     {
       "name": "Germantown",
