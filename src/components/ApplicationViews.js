@@ -16,6 +16,7 @@ import { EmployeeList } from "./employee/EmployeeList";
 import { EmployeeForm } from "./employee/EmployeeForm";
 import { Login } from "../components/auth/Login";
 import { Register } from "../components/auth/Register";
+import { CustomerDetail } from "./customer/CustomerDetail";
 
 export const ApplicationViews = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem("kennel_customer") !== null)
@@ -79,6 +80,10 @@ export const ApplicationViews = () => {
 
             <Route path="/customers/create">
                 <CustomerForm />
+            </Route>
+
+            <Route exact path="/customers/:customerId(\d+)">
+                <CustomerDetail />
             </Route>
 
             <Route path="customers/:customerId(\d+)/edit">

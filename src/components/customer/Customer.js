@@ -11,7 +11,11 @@ export const Customer = ({ customer, handleDeleteCustomer }) => {
                     {customer.name}
                     </span></h3>
                     <p>Address: {customer.address}</p>
-                    <button type="button" onClick={() => handleDeleteCustomer(customer.id)}>Delete</button>
+                    <Link to={`/customers/${customer.id}`}>
+                        <button type="button">
+                            Details
+                        </button>
+                    </Link>
                     <Link to={`/customers/${customer.id}/edit`}>
                         <button type="button">
                             Edit
