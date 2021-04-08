@@ -26,16 +26,17 @@ export const CustomerEditForm = () => {
                 setCustomer(customer);
                 setIsLoading(false);
             });
-    }, []);
+    }, [customerId]);
 
-    const udpateExistingCustomer = evt => {
+    const updateExistingCustomer = evt => {
         evt.preventDefault()
         setIsLoading(true);
 
         const editedCustomer = {
             id: customerId,
             name: customer.name,
-            address: customer.address
+            address: customer.address,
+            email: customer.email
         };
 
         updateCustomer(editedCustomer)
@@ -64,14 +65,14 @@ export const CustomerEditForm = () => {
                         className="form-control"
                         onChange={handleFieldChange}
                         id="address"
-                        value={animal.address}
+                        value={customer.address}
                     />
                     <label htmlFor="address">address</label>
                     </div>
                     <div className="alignRight">
                         <button
                             type="button" disabled={isLoading}
-                            onClick={udpateExistingCustomer}
+                            onClick={updateExistingCustomer}
                             className="btn btn-primary">
                             Submit</button>
                     </div>

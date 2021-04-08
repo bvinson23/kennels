@@ -53,7 +53,7 @@ export const AnimalEditForm = () => {
                 setAnimal(animal);
                 setIsLoading(false);
             });
-    }, []);
+    }, [animalId]);
 
     const updateExistingAnimal = evt => {
         evt.preventDefault()
