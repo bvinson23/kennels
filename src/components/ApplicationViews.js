@@ -16,6 +16,7 @@ import { LocationEditForm } from "./location/LocationEditForm";
 import { EmployeeList } from "./employee/EmployeeList";
 import { EmployeeForm } from "./employee/EmployeeForm";
 import { EmployeeEditForm } from "./employee/EmployeeEditForm";
+import { EmployeeWithAnimals } from "./employee/EmployeeWithAnimals"
 import { Login } from "../components/auth/Login";
 import { Register } from "../components/auth/Register";
 
@@ -95,6 +96,10 @@ export const ApplicationViews = ({ isAuthenticated, setAuthUser }) => {
 
             <Route path="/employees/create">
                 <EmployeeForm />
+            </Route>
+
+            <Route exact path="/employees/:employeeId(\d+)/details">
+                <EmployeeWithAnimals />
             </Route>
 
             <Route path="/employees/:employeeId(\d+)/edit">
