@@ -11,6 +11,11 @@ export const Employee = ({employee, handleDeleteEmployee}) => {
                     {employee.name}
                     </span></h3>
                     <p>Location: {employee.location.name}</p>
+                    <Link to={`/employees/${employee.id}/details`}>
+                        <button type="button">
+                            Details
+                        </button>
+                    </Link>
                     <Link to={`/employees/${employee.id}/edit`}>
                         <button type="button">
                             Edit
