@@ -27,7 +27,8 @@ export const AnimalDetail = () => {
                 name: animal.name,
                 breed: animal.breed,
                 location: animal.location,
-                customer: animal.customer
+                customer: animal.customer,
+                employee: animal.employee
             });
             setIsLoading(false);
         });
@@ -40,6 +41,7 @@ export const AnimalDetail = () => {
             {/* What's up with the question mark???? See below.*/}
             <div className="animal__location">Location: {animal.location?.name}</div>
             <div className="animal__owner">Customer: {animal.customer?.name}</div>
+            <div className="animal__employee">Employee in charge: {animal.employee?.name}</div>
             <button type="button" disabled={isLoading} onClick={handleDelete}>
                 Discharge
             </button>
