@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavBar } from "./nav/NavBar";
 import { ApplicationViews } from "./ApplicationViews";
 import "./Kennel.css"
@@ -6,7 +6,7 @@ import "./Kennel.css"
 export const Kennel = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem("kennel_customer") !== null)
 
-    const setIsAuthUser = (user) => {
+    const setAuthUser = (user) => {
         sessionStorage.setItem("kennel_customer", JSON.stringify(user))
         setIsAuthenticated(sessionStorage.getItem("kennel_customer") !== null)
     }

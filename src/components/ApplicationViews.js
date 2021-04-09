@@ -19,13 +19,7 @@ import { EmployeeEditForm } from "./employee/EmployeeEditForm";
 import { Login } from "../components/auth/Login";
 import { Register } from "../components/auth/Register";
 
-export const ApplicationViews = () => {
-    const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem("kennel_customer") !== null)
-
-    const setAuthUser = (user) => {
-	sessionStorage.setItem("kennel_customer", JSON.stringify(user))
-	setIsAuthenticated(sessionStorage.getItem("kennel_customer") !== null)
-}
+export const ApplicationViews = ({ isAuthenticated, setAuthUser }) => {
     return (
         <>
             {/*Render the location list when http://localhost:3000/ */}
@@ -47,7 +41,6 @@ export const ApplicationViews = () => {
             <Route path="/animals/:animalId(\d+)/edit">
                 <AnimalEditForm />
             </Route>
-
             {/*
                 This is a new route to handle a URL with the following pattern:
                 http://localhost:3000/animals/1
