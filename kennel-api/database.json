@@ -4,9 +4,9 @@
       "id": 2,
       "name": "Maggie",
       "breed": "Domestic Short Hair",
-      "locationId": 1,
+      "locationId": 4,
       "customerId": 2,
-      "employeeId": 1
+      "employeeId": 3
     },
     {
       "id": 3,
@@ -71,6 +71,12 @@
       "name": "Ron Swanson",
       "email": "rswanson@pawnee.gov",
       "address": "<Redacted>"
+    },
+    {
+      "id": 7,
+      "name": "Toph Beifong",
+      "email": "toph@metalbending.com",
+      "address": "Swamp"
     }
   ],
   "employees": [
@@ -92,12 +98,17 @@
     {
       "id": 4,
       "name": "David Rose",
-      "locationId": 2
+      "locationId": 3
     },
     {
       "name": "Johnny Rose",
       "locationId": 1,
       "id": 5
+    },
+    {
+      "name": "Alexis Rose",
+      "locationId": 4,
+      "id": 6
     }
   ],
   "locations": [
