@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router';
 import { addCustomer } from '../../modules/CustomerManager';
 import './CustomerForm.css'
@@ -46,6 +46,12 @@ export const CustomerForm = () => {
 				<div className="form-group">
 					<label htmlFor="address">Customer address:</label>
 					<input type="text" id="address" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Address" value={customer.address} />
+				</div>
+			</fieldset>
+			<fieldset>
+				<div className="form-group">
+					<label htmlFor="email">Customer email:</label>
+					<input type="text" id="email" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Email" value={customer.email} />
 				</div>
 			</fieldset>
 			<button className="btn btn-primary"

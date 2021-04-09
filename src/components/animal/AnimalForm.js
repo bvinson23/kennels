@@ -72,13 +72,14 @@ export const AnimalForm = () => {
 
     const handleClickSaveAnimal = (event) => {
         event.preventDefault() //Prevents browser from submitting the form
+        setIsLoading(true);
 
         const locationId = animal.locationId
         const customerId = animal.customerId
         const employeeId = animal.employeeId
 
         if (locationId === 0 || customerId === 0 || employeeId === 0) {
-            window.alert("Please select a location and a customer")
+            window.alert("Please select a location, a customer, and an employee")
         } else {
             //invoke addAnimal passing animal as an argument.
             //once complete, change the url and display the animal list

@@ -1,5 +1,6 @@
-import React from "react"
-import "./Employee.css"
+import React from "react";
+import "./Employee.css";
+import { Link } from "react-router-dom";
 
 //function to make an employee card
 export const Employee = ({employee, handleDeleteEmployee}) => {
@@ -10,6 +11,11 @@ export const Employee = ({employee, handleDeleteEmployee}) => {
                     {employee.name}
                     </span></h3>
                     <p>Location: {employee.location.name}</p>
+                    <Link to={`/employees/${employee.id}/edit`}>
+                        <button type="button">
+                            Edit
+                        </button>
+                    </Link>
                     <button type="button" onClick={() => handleDeleteEmployee(employee.id)}>Terminate</button>
             </div>
         </div>

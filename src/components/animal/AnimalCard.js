@@ -17,6 +17,11 @@ export const AnimalCard = ({animal}) => {
                     <Link to={`/animals/${animal.id}`}>
                         <button>Details</button>
                     </Link>
+                    <Link to={`/animals/${animal.id}/edit`}>
+                    <button type="button">
+                        Edit
+                    </button>
+                    </Link>
             </div>
         </div>
     );
