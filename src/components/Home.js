@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { PropsAndState } from './PropsAndState';
 import { AnimalSpotlight } from "../components/animal/AnimalSpotlight";
 import { getRandomId } from "../modules/AnimalManager";
 

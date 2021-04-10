@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 //import the components we will need
 import { Location } from "./Location";
+import { GenericCard } from "../GenericCard"
 import { deleteLocation, getAllLocations, getLocationById } from "../../modules/LocationManager";
 import { useHistory } from "react-router-dom";
 
@@ -39,9 +40,12 @@ export const LocationList = () => {
             </section>
             <div className="container-cards">
                 {locations.map(location =>
-                    <Location
+                    <GenericCard
                         key={location.id}
                         location={location}
+                        name={location.name}
+                        addlInfo={location.address}
+                        resource="locations"
                         handleDeleteLocation={handleDeleteLocation} />)}
             </div>
         </>

@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Location.css"
-import { LocationEditForm } from "./LocationEditForm";
 
 //function to make an location card
 export const Location = ({location}) => {
